@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    margin-bottom: 1rem;
+}
+
+header > p {
+    font-weight: lighter;
+}
+
+nav > ul {
+    list-style-type: none;
+}
+
+nav li:hover {
+    list-style-type: square;
+    color: #e8e;
+}
+
+nav a {
+    display: block;
+}

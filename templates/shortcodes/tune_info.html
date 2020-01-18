@@ -1,0 +1,39 @@
+<table class="tune-info">
+  <tbody>
+    <tr>
+      <td>artist</td>
+      <td><a href="/artists/{{ artist | slugify }}">{{ artist }}</a></td>
+    </tr>
+    <tr><td>title</td><td>{{ title }}</td></tr>
+    {% if album %}<tr><td>album</td><td>{{ album }}</td></tr>{% endif %}
+    {% if year %}
+      <tr>
+        <td>year</td>
+        <td><a href="/years/{{ year }}">{{ year }}</a></td>
+      </tr>
+    {% endif %}
+    {% if duration %}
+      <tr>
+        <td>duration</td>
+        <td>{{ duration }}</td>
+      </tr>
+    {% endif %}
+    {% if genres %}
+      <tr>
+        <td>genres</td>
+        <td>
+          {% for genre in genres %}
+            <a href="/genres/{{ genre | slugify }}">{{ genre }}</a>
+            {%- if not loop.last %}, {% endif %}
+          {% endfor %}
+        </td>
+      </tr>
+    {% endif %}
+    {% if labels %}
+      <tr>
+        <td>label(s)</td>
+        <td>{{ labels | join(sep=", ") }}</td>
+      </tr>
+    {% endif %}
+  </tbody>
+</table>

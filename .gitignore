@@ -1,0 +1,8 @@
+# Build output
+public/
+*.pdf
+
+# Text editor stuff
+.vscode/
+*.swp
+.idea/

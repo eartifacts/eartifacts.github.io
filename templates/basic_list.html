@@ -1,0 +1,20 @@
+<div id="content-wrapper">
+  <div id="content" class="section-content">
+    {{ section.content | safe }}
+  </div>
+</div>
+
+<ul id="pages-list">
+  {% for page in section.pages %}
+    <li>
+      <h2 class="page-path">
+        <a href="{{ page.path }}">{{ page.title }}</a>
+      </h2>
+      <div class="summary">{{ page.summary | safe }}</div>
+      <p class="cont-reading">
+        <a href="{{ page.path }}">continue reading&hellip;</a>
+      </p>
+      <hr />
+    </li>
+  {% endfor %}
+</ul>
