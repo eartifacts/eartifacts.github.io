@@ -25,11 +25,11 @@
           {% for page in term.pages %}
             <li>
               <h2 class="page-path">
-                <a href="{{ page.path }}">{{ page.title }}</a>
+                <a href="/{{ page.path }}">{{ page.title }}</a>
               </h2>
               <div class="summary">{{ page.summary | safe }}</div>
               <p class="cont-reading">
-                <a href="{{ page.path }}">continue reading&hellip;</a>
+                <a href="/{{ page.path }}">continue reading&hellip;</a>
               </p>
               <hr />
             </li>
