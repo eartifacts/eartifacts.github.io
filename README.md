@@ -14,6 +14,22 @@ eartifacts uses [Zola](https://www.getzola.org/) for static website generation.
 4. `zola serve`.
 5. Navigate to `http://localhost:1111/` in your browser.
 
+### scores
+
+If you want to build the scores yourself, the [build_ly.sh](build_ly.sh) script
+can be run while in the directory of `*.ly` files that you want to build:
+
+```bash
+build_ly.sh *.ly
+```
+
+The script assumes that you have the following in your `$PATH`:
+
+* [bash](https://www.gnu.org/software/bash/)
+* [sed](https://en.wikipedia.org/wiki/Sed)
+* [lilypond](http://lilypond.org/)
+* [inkscape](https://inkscape.org/)
+
 ## legal
 
 eartifacts does not contain any copyrighted audio, but does contain bespoke

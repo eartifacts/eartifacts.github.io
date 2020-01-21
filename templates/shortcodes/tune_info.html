@@ -1,27 +1,42 @@
-<table class="tune-info">
+<table class="tune-info"
+       title="Tune info for {{ artist }} &ndash; &ldquo;{{ title }}&rdquo;">
   <tbody>
     <tr>
-      <td>artist</td>
-      <td><a href="/artists/{{ artist | slugify }}">{{ artist }}</a></td>
+      <th scope="row">artist</th>
+      <td {% if instrumentation %}colspan="2"{% endif %}>
+        <a href="/artists/{{ artist | slugify }}">{{ artist }}</a>
+      </td>
     </tr>
-    <tr><td>title</td><td>{{ title }}</td></tr>
-    {% if album %}<tr><td>album</td><td>{{ album }}</td></tr>{% endif %}
+    <tr>
+      <th scope="row">title</th>
+      <td {% if instrumentation %}colspan="2"{% endif %}>{{ title }}</td>
+    </tr>
+    {% if album %}
+      <tr>
+        <th scope="row">album</th>
+        <td {% if instrumentation %}colspan="2"{% endif %}>{{ album }}</td>
+      </tr>
+    {% endif %}
     {% if year %}
       <tr>
-        <td>year</td>
-        <td><a href="/years/{{ year }}">{{ year }}</a></td>
+        <th scope="row">year</th>
+        <td {% if instrumentation %}colspan="2"{% endif %}>
+          <a href="/years/{{ year }}">{{ year }}</a>
+        </td>
       </tr>
     {% endif %}
     {% if duration %}
       <tr>
-        <td>duration</td>
-        <td>{{ duration }}</td>
+        <th scope="row">duration</th>
+        <td {% if instrumentation %}colspan="2"{% endif %}>
+          {{ duration }}
+        </td>
       </tr>
     {% endif %}
     {% if genres %}
       <tr>
-        <td>genres</td>
-        <td>
+        <th scope="row">genres</th>
+        <td {% if instrumentation %}colspan="2"{% endif %}>
           {% for genre in genres %}
             <a href="/genres/{{ genre | slugify }}">{{ genre }}</a>
             {%- if not loop.last %}, {% endif %}
@@ -31,8 +46,22 @@
     {% endif %}
     {% if labels %}
       <tr>
-        <td>label(s)</td>
-        <td>{{ labels | join(sep=", ") }}</td>
+        <th scope="row">label(s)</th>
+        <td {% if instrumentation %}colspan="2"{% endif %}>
+          {{ labels | join(sep=", ") }}
+        </td>
+      </tr>
+    {% endif %}
+    {% if instrumentation %}
+      <tr>
+        <th rowspan="{{ instrumentation | length }}">instrumentation</th>
+        {% for instrument in instrumentation %}
+          {% set inst_split = instrument | split(pat=": ") %}
+          <th scope="row">{{ inst_split.0 }}</th>
+          <td>{{ inst_split.1 }}</td>
+          </tr>
+          <tr>
+        {% endfor %}
       </tr>
     {% endif %}
   </tbody>
