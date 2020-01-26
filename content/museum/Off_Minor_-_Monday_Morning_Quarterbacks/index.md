@@ -105,6 +105,8 @@ roman(entries=["V 7"]) }} of F major.
 
 Among many other things, this use of what are (virtually) rootless chords could
 be a contributing factor to why Off Minor often gets the &ldquo;jazz
-punk&rdquo; label attached to them.
+punk&rdquo; label attached to them, considering that jazz places such an
+emphasis on the 3<sup>rd</sup> and 7<sup>th</sup> factors (as well as
+extensions) of chords that it draws away from the root&rsquo;s importance.
 
 [off-minor]: https://en.wikipedia.org/wiki/List_of_compositions_by_Thelonious_Monk#Off_Minor
