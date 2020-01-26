@@ -1,0 +1,26 @@
+<span class="roman">
+  {% for entry in entries %}
+    {%- set subentries = entry | split(pat=" ") -%}
+    <b>{{ subentries | first }}<sup>
+      {%- for modifier in subentries | slice(start=1) -%}
+        {%- if modifier == "major" -%}
+          &#x25b5;
+        {%- elif modifier == "diminished" -%}
+          &#x26ac;
+        {%- elif modifier == "7" -%}
+          7
+        {%- elif modifier == "9" -%}
+          9
+        {%- elif modifier == "11" -%}
+          11
+        {%- elif modifier == "13" -%}
+          13
+        {%- endif -%}
+      {%- endfor -%}
+    </sup></b>
+
+    {%- if not loop.last -%}
+      &nbsp;&ndash;&nbsp;
+    {%- endif -%}
+  {% endfor %}
+</span>

@@ -1,0 +1,42 @@
+<span class="chord-name" title="{{ root }} {% if accidental %}{{ accidental }} {% endif %}{{ quality }} chord{% if slash %} on {{ slash }}{% if slash_accidental %} {{ slash_accidental }}{% endif %}{% endif %}">
+  {{ root }}
+  {%- if accidental -%}
+    {%- if accidental == "flat" -%}
+      &#x266d;
+    {%- elif accidental == "sharp" -%}
+      &#x266f;
+    {%- endif -%}
+  {%- endif -%}
+  {%- for modifier in quality | split(pat=" ") -%}
+    {%- if modifier == "minor" -%}
+      m
+    {%- endif -%}
+  {%- endfor -%}
+  <sup>
+    {%- for modifier in quality | split(pat=" ") -%}
+      {%- if modifier == "major" -%}
+        &#x25b5;
+      {%- elif modifier == "diminished" -%}
+        &#x26ac;
+      {%- elif modifier == "7" -%}
+        7
+      {%- elif modifier == "9" -%}
+        9
+      {%- elif modifier == "11" -%}
+        11
+      {%- elif modifier == "13" -%}
+        13
+      {%- endif -%}
+    {%- endfor -%}
+  </sup>
+  {%- if slash -%}
+    /{{ slash }}
+    {%- if slash_accidental -%}
+      {%- if slash_accidental == "flat" -%}
+        &#x266d;
+      {%- elif slash_accidental == "sharp" -%}
+        &#x266f;
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+</span>

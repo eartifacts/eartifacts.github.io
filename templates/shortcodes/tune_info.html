@@ -1,68 +1,87 @@
-<table class="tune-info"
-       title="Tune info for {{ artist }} &ndash; &ldquo;{{ title }}&rdquo;">
-  <tbody>
-    <tr>
-      <th scope="row">artist</th>
-      <td {% if instrumentation %}colspan="2"{% endif %}>
-        <a href="/artists/{{ artist | slugify }}">{{ artist }}</a>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">title</th>
-      <td {% if instrumentation %}colspan="2"{% endif %}>{{ title }}</td>
-    </tr>
-    {% if album %}
+{% if cover_ext %}
+  <figure class="cover-art">
+    <img src="cover_art.{{ cover_ext }}"
+         alt="Cover art for &ldquo;{% if album %}{{ album }}{% else %}{{ title }}{% endif %}&rdquo;" />
+
+    <figcaption>
+      Cover art for &ldquo;
+      {%- if album -%}
+        {{ album }}
+      {%- else -%}
+        {{ title }}
+      {%- endif -%}
+      &rdquo;
+    </figcaption>
+  </figure>
+{% endif %}
+
+<div class="centering">
+  <table class="tune-info"
+         title="Tune info for {{ artist }} &ndash; &ldquo;{{ title }}&rdquo;">
+    <tbody>
       <tr>
-        <th scope="row">album</th>
-        <td {% if instrumentation %}colspan="2"{% endif %}>{{ album }}</td>
-      </tr>
-    {% endif %}
-    {% if year %}
-      <tr>
-        <th scope="row">year</th>
+        <th scope="row">artist</th>
         <td {% if instrumentation %}colspan="2"{% endif %}>
-          <a href="/years/{{ year }}">{{ year }}</a>
+          <a href="/artists/{{ artist | slugify }}">{{ artist }}</a>
         </td>
       </tr>
-    {% endif %}
-    {% if duration %}
       <tr>
-        <th scope="row">duration</th>
-        <td {% if instrumentation %}colspan="2"{% endif %}>
-          {{ duration }}
-        </td>
+        <th scope="row">title</th>
+        <td {% if instrumentation %}colspan="2"{% endif %}>{{ title }}</td>
       </tr>
-    {% endif %}
-    {% if genres %}
-      <tr>
-        <th scope="row">genres</th>
-        <td {% if instrumentation %}colspan="2"{% endif %}>
-          {% for genre in genres %}
-            <a href="/genres/{{ genre | slugify }}">{{ genre }}</a>
-            {%- if not loop.last %}, {% endif %}
+      {% if album %}
+        <tr>
+          <th scope="row">album</th>
+          <td {% if instrumentation %}colspan="2"{% endif %}>{{ album }}</td>
+        </tr>
+      {% endif %}
+      {% if year %}
+        <tr>
+          <th scope="row">year</th>
+          <td {% if instrumentation %}colspan="2"{% endif %}>
+            <a href="/years/{{ year }}">{{ year }}</a>
+          </td>
+        </tr>
+      {% endif %}
+      {% if duration %}
+        <tr>
+          <th scope="row">duration</th>
+          <td {% if instrumentation %}colspan="2"{% endif %}>
+            {{ duration }}
+          </td>
+        </tr>
+      {% endif %}
+      {% if genres %}
+        <tr>
+          <th scope="row">genres</th>
+          <td {% if instrumentation %}colspan="2"{% endif %}>
+            {% for genre in genres %}
+              <a href="/genres/{{ genre | slugify }}">{{ genre }}</a>
+              {%- if not loop.last %}, {% endif %}
+            {% endfor %}
+          </td>
+        </tr>
+      {% endif %}
+      {% if labels %}
+        <tr>
+          <th scope="row">label(s)</th>
+          <td {% if instrumentation %}colspan="2"{% endif %}>
+            {{ labels | join(sep=", ") }}
+          </td>
+        </tr>
+      {% endif %}
+      {% if instrumentation %}
+        <tr>
+          <th rowspan="{{ instrumentation | length }}">instrumentation</th>
+          {% for instrument in instrumentation %}
+            {% set inst_split = instrument | split(pat=": ") %}
+            <th scope="row">{{ inst_split.0 }}</th>
+            <td>{{ inst_split.1 }}</td>
+            </tr>
+            <tr>
           {% endfor %}
-        </td>
-      </tr>
-    {% endif %}
-    {% if labels %}
-      <tr>
-        <th scope="row">label(s)</th>
-        <td {% if instrumentation %}colspan="2"{% endif %}>
-          {{ labels | join(sep=", ") }}
-        </td>
-      </tr>
-    {% endif %}
-    {% if instrumentation %}
-      <tr>
-        <th rowspan="{{ instrumentation | length }}">instrumentation</th>
-        {% for instrument in instrumentation %}
-          {% set inst_split = instrument | split(pat=": ") %}
-          <th scope="row">{{ inst_split.0 }}</th>
-          <td>{{ inst_split.1 }}</td>
-          </tr>
-          <tr>
-        {% endfor %}
-      </tr>
-    {% endif %}
-  </tbody>
-</table>
+        </tr>
+      {% endif %}
+    </tbody>
+  </table>
+</div>
