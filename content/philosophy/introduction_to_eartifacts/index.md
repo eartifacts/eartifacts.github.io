@@ -59,11 +59,12 @@ give some sort of background information and/or description of the band/artist
 in question.
 
 Rather than being a kind of gallery, eartifacts calls itself a
-&ldquo;museum&rdquo; because the focus is as much on the content (and the
-history) of the subjects as it is on simply cataloguing the subjects.
-eartifacts has somewhat of an anthropological bent, but is largely focused on
-the &ldquo;raw content&rdquo;, so to speak, of the music itself. eartifacts
-also does not provide any of the audio that is the subject of its articles.
+&ldquo;museum&rdquo; because the focus is as much on a detailed examination of
+the content (and the history) of the subjects as it is on simply cataloguing
+the subjects. eartifacts has somewhat of an anthropological bent, but is
+largely focused on the &ldquo;raw content&rdquo;, so to speak, of the music
+itself. eartifacts also does not provide any of the audio that is the subject
+of its articles.
 
 However, like a music blog, eartifacts as a whole can only ever hope to reflect
 a tiny sliver of the wide range of musical styles and tastes that exist in the

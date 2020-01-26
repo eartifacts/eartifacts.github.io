@@ -83,10 +83,10 @@ The first harmonic region here is pretty obviously some kind of A minor chord;
 here it is labelled as {{ chord_name(root="A", quality="minor 7") }} because
 the G natural is played prominently in the bass guitar part.
 
-The second harmonic region is a little bit tricker, as the only obvious part is
-that B{{flat()}} is in the bass. Arguably, this simple and traditional kind of
-chord-based analysis fails us here, but we can still get some insight from it.
-One could try to analyze this harmonic region as a {{ chord_name(root="G",
+The second harmonic region is a little bit trickier, as the only obvious part
+is that B{{flat()}} is in the bass. Arguably, this simple and traditional kind
+of chord-based analysis fails us here, but we can still get some insight from
+it. One could try to analyze this harmonic region as a {{ chord_name(root="G",
 quality="minor 13", slash="B", slash_accidental="flat") }}, or even as some
 kind of B{{flat()}} power chord with an added {{sharp()}}4 and a 6? But here we
 have chosen {{ chord_name(root="E", quality="diminished", slash="B",
