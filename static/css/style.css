@@ -1,18 +1,9 @@
-html {
+html,
+body {
+    width: 100%;
+    background-color: #111;
     font-family: sans-serif;
-}
-
-code,
-pre {
-    font-family: monospace;
-}
-
-code {
-    font-size: 0.85rem;
-}
-
-pre {
-    font-size: 1rem;
+    color: #eee;
 }
 
 html,
@@ -35,11 +26,31 @@ li {
     border: 0;
 }
 
-html,
-body {
-    width: 100%;
-    background-color: #111;
-    color: #eee;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style-position: outside;
+}
+
+code,
+pre {
+    font-family: monospace;
+}
+
+code {
+    font-size: 0.85rem;
+}
+
+pre {
+    font-size: 1rem;
 }
 
 b {
@@ -68,14 +79,32 @@ hr {
     border: 0.05rem solid #eee5;
 }
 
-td {
-    text-align: left;
-    font-weight: normal;
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    margin: 0;
+    padding: 0;
+}
+
+td,
+th {
+    margin: 0;
+    padding: 0.5rem;
+    border-width: 0.05rem;
+    border-style: solid;
+    border-color: #eee5;
 }
 
 th {
     text-align: center;
     font-weight: bolder;
+}
+
+td {
+    text-align: left;
+    font-weight: normal;
 }
 
 details {

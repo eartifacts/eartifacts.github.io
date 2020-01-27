@@ -4,7 +4,7 @@ title = "Off Minor – “Monday Morning Quarterbacks”"
 [taxonomies]
 tags = ["vocals", "unclean vocals", "guitar", "electric guitar", "bass guitar",
         "electric bass guitar", "drumkit", "odd time signatures", "power trio"]
-genres = ["skramz", "jazz punk", "math rock", "post-hardcore"]
+genres = ["skramz", "jazz punk", "math rock", "post-hardcore", "post-punk"]
 years = ["2002"]
 artists = ["Off Minor"]
 labels = ["Clean Plate Records", "EarthWaterSky Connection"]
@@ -35,7 +35,7 @@ track, as the following track is a brief solo guitar rendition of [Monk&rsquo;s
                  "drumkit: Steven Roche",
              ]) }}
 
-## Theme
+## theme
 
 This tune is not **quite** monothematic, strictly speaking, but is nevertheless
 in a broadly theme-and-variations form. The first two bars set the theme; here
@@ -43,6 +43,8 @@ is a rough transcription of those two bars, with repeat signs showing how it is
 repeated:
 
 {{ sheet(n=0, summary="Rough transcription of the first two bars of “Monday Morning Quarterbacks”") }}
+
+### meter
 
 The first thing that stands out here is the choice of meter: I&rsquo;ve written
 {{ time_sig(n=11, d=4) }} because this represents the pulse that is felt and
@@ -53,6 +55,8 @@ due to the dotted quarter notes overlapping the quarter note pulse for the
 first 9 pulses of each measure, i.e. a {{ time_sig(n="3+3+3+3+3+3+4", d=8) }}
 feel. The pace is fairly swift, at circa 185 pulses per minute, so a bar of {{
 time_sig(n=11, d=4) }} is not terribly long.
+
+### orchestration
 
 Also of note is the orchestration here. The ensemble itself is typical of rock
 music in general: the classic [power
@@ -70,7 +74,7 @@ transcription) to respond to the chord-melody of the guitar.
 From here we will take a look at a traditional decomposition of this theme into
 &ldquo;harmony&rdquo; and &ldquo;melody&rdquo;.
 
-### Harmony (and melody)
+### harmony (and melody)
 
 What follows is a reduction of the theme as transcribed above:
 
