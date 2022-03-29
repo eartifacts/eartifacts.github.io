@@ -16,8 +16,9 @@ eartifacts uses [Zola](https://www.getzola.org/) for static website generation.
 
 ### scores
 
-If you want to build the scores yourself, the [build_ly.sh](build_ly.sh) script
-can be run while in the directory of `*.ly` files that you want to build:
+If you want to build the scores yourself, the [build\_ly\.sh](build_ly.sh)
+script can be run while in the directory of `*.ly` files that you want to
+build:
 
 ```bash
 build_ly.sh *.ly
