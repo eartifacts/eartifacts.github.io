@@ -5,6 +5,6 @@
   "MD025": false,
   "MD026": { "punctuation": ".,;:。，；：" },
   "MD029": { "style": "ordered" },
-  "MD033": { "allowed_elements": ["i", "sup", "sub"] },
+  "MD033": { "allowed_elements": ["b", "i", "sup", "sub"] },
   "MD035": { "style": "---" }
 }

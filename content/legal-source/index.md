@@ -6,7 +6,7 @@ description = "legal details and source code for eartifacts"
 eartifacts does not contain any copyrighted audio, but does contain bespoke
 rough musical transcriptions &mdash; including lyrics &mdash; of audio whose
 copyrights are held by unaffiliated third parties. All use of such musical
-transcriptions are legitimate in any legal jurisdiction (e.g. the United
+transcriptions are legitimate in any legal jurisdiction (e\.g. the United
 States) that has a notion of &ldquo;fair use&rdquo; that covers one or more of
 the following: commentary, criticism, research, scholarship.
 
@@ -19,10 +19,10 @@ same license, at the licensee&rsquo;s option). For access to the source, see
 [![GNU AGPL v3+](https://www.gnu.org/graphics/agplv3-with-text-162x68.png
 "GNU AGPL v3+")](https://www.gnu.org/licenses/agpl-3.0.html)
 
-[eartifacts logo]({{ get_url(path="img/eartifacts.svg") }}): Ear by Maxim David
-from the Noun Project.
+[eartifacts logo](/img/eartifacts.svg): Ear by Maxim David from the Noun
+Project ([CC BY 3\.0](https://creativecommons.org/licenses/by/3.0/)).
 
-## source
+## source {#source}
 
-The source for eartifacts is hosted on [gitlab](https://gitlab.com/):
-<https://gitlab.com/eartifacts/eartifacts.gitlab.io>
+The source for eartifacts is hosted on GitHub:
+<https://github.com/eartifacts/eartifacts.github.io>

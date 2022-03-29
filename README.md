@@ -8,11 +8,11 @@ eartifacts uses [Zola](https://www.getzola.org/) for static website generation.
 
 1. [Install Zola][install-zola].
 2. Clone the eartifacts repo, like so:
-   `git clone https://gitlab.com/eartifacts/eartifacts.gitlab.io.git`.
+   `git clone https://github.com/eartifacts/eartifacts.github.io.git`.
 3. Change your working directory to the root of the cloned repo:
    `cd eartifacts`.
 4. `zola serve`.
-5. Navigate to `http://localhost:1111/` in your browser.
+5. Navigate to `http://localhost:1111/` in your web browser.
 
 ### scores
 
@@ -23,12 +23,12 @@ can be run while in the directory of `*.ly` files that you want to build:
 build_ly.sh *.ly
 ```
 
-The script assumes that you have the following in your `$PATH`:
+The script assumes that you have all of the following in your `$PATH`:
 
-* [bash](https://www.gnu.org/software/bash/)
-* [sed](https://en.wikipedia.org/wiki/Sed)
-* [lilypond](http://lilypond.org/)
-* [inkscape](https://inkscape.org/)
+- [bash](https://www.gnu.org/software/bash/)
+- [sed](https://en.wikipedia.org/wiki/Sed)
+- [lilypond](http://lilypond.org/)
+- [inkscape](https://inkscape.org/)
 
 ## legal
 
@@ -48,6 +48,6 @@ same license, at the licensee&rsquo;s option).
 "GNU AGPL v3+")](https://www.gnu.org/licenses/agpl-3.0.html)
 
 [eartifacts logo](static/img/eartifacts.svg): Ear by Maxim David from the Noun
-Project.
+Project ([CC BY 3\.0](https://creativecommons.org/licenses/by/3.0/)).
 
 [install-zola]: https://www.getzola.org/documentation/getting-started/installation/

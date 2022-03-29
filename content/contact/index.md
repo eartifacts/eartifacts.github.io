@@ -3,21 +3,21 @@ title = "contact"
 description = "contact info for eartifacts"
 +++
 
-## gitlab
+## GitHub
 
-<https://gitlab.com/eartifacts>
+<https://github.com/eartifacts>
 
 ## email
 
+<!-- markdownlint-disable no-inline-html -->
+
 <address>
-    eartifacts<abbr
-    title="to be replaced with an &ldquo;at&rdquo; sign (U+0040)">&#x24D0;</abbr>protonmail<abbr
-    title="to be replaced with a &ldquo;dot&rdquo;/&ldquo;period&rdquo;/&ldquo;full stop&rdquo; (U+002e)">&#x2022;</abbr>com
+eartifacts<abbr
+title="to be replaced with an &ldquo;at&rdquo; sign (U+0040)">&#x24D0;</abbr>protonmail<abbr
+title="to be replaced with a &ldquo;dot&rdquo;/&ldquo;period&rdquo;/&ldquo;full stop&rdquo; (U+002e)">&#x2022;</abbr>com
 </address>
 
 <pre title="public key for eartifacts&#x24D0;protonmail&#x2022;com">-----BEGIN PGP PUBLIC KEY BLOCK-----
-Version: OpenPGP.js v4.7.2
-Comment: https://openpgpjs.org
 
 xsBNBF4iQlYBCACvI2JcEdrke1WF2eRNTBTE7qwu3MMihyGXp85fex/QwkSH
 ma9XkMtHy49ctecAudeQTWyab+0obpSMNFjsdz6V3rtuzH4hCf4TWqLiYoLj
@@ -49,3 +49,5 @@ oRPUMPvkYCvC3x1A1Yvu845Z/qB0+b9oihrZY4/hS90=
 =1ixp
 -----END PGP PUBLIC KEY BLOCK-----
 </pre>
+
+<!-- markdownlint-enable no-inline-html -->

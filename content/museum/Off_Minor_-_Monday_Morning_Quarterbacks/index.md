@@ -1,5 +1,5 @@
 +++
-title = "Off Minor – “Monday Morning Quarterbacks”"
+title = "Off Minor — “Monday Morning Quarterbacks”"
 
 [taxonomies]
 tags = ["vocals", "unclean vocals", "guitar", "electric guitar", "bass guitar",
