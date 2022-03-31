@@ -51,6 +51,16 @@
       }
     }
 
+    #(define standard-style '(
+             (hihat         cross   #f          5)
+             (halfopenhihat cross   "halfopen"  5)
+             (openhihat     xcircle #f          5)
+             (pedalhihat    cross   #f         -5)
+             (ridebell      diamond #f          4)
+             (snare         default #f          1)
+             (lowtom        default #f          0)
+             (bassdrum      default #f         -3)))
+
     \new DrumStaff \with {
       instrumentName = \markup {
         \column { "Drumkit "
@@ -58,13 +68,14 @@
         }
       }
       shortInstrumentName = #"Drum "
+      drumStyleTable = #(alist->hash-table standard-style)
     } {
       \drummode {
         \time 11/4
 
         << {
-          hhho4 hh hh hh hh hh hh hh hh hh      hh16 hh hh hh |
-          hhho4 hh hh hh hh hh hh hh hh r8 hhho rb4           |
+          hho4 hh hh hh hh hh hh hh hh hh     hh16 hh hh hh |
+          hho4 hh hh hh hh hh hh hh hh r8 hho rb4           |
         } \\ {
           bd4. bd4 bd8 sn4. bd4 \parenthesize sn16 \parenthesize sn bd8 bd4 sn bd8 sn4 bd    |
           bd4. bd4 bd8 sn4. bd4 \parenthesize sn16 \parenthesize sn bd8 bd4 sn bd8 sn4 r8 bd |

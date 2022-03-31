@@ -1,7 +1,10 @@
-<span class="time-sig" title="{{ n }}/{{ d }} time">
+{%- set n_str = n | as_str -%}
+{%- set additive = n_str is containing("+") -%}
+
+<abbr class="time-sig" title="{% if additive %}({% endif %}{{ n }}{% if additive %}){% endif %}&#x29F8;{{ d }} time">
   <sup><b>{{ n }}</b></sup>
   <br />
   <sub><b>{{ d }}</b></sub>
-</span>
+</abbr>
 
 {#- This comment is necessary to remove unwanted whitespace. -#}

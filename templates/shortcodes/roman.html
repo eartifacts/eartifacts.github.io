@@ -1,12 +1,91 @@
+{%- set entries_str = entries | as_str -%}
+
 <span class="roman">
-  {% for entry in entries %}
+  {%- for entry in entries -%}
     {%- set subentries = entry | split(pat=" ") -%}
-    <b>{{ subentries | first }}<sup>
-      {%- for modifier in subentries | slice(start=1) -%}
+    {%- set root = subentries | first -%}
+    {%- set modifiers = subentries | slice(start=1) -%}
+    {%- set root_upper = root | upper -%}
+    {%- set root_lower = root | lower -%}
+    {%- set major = root == root_upper -%}
+    {%- set minor = root == root_lower -%}
+
+    {%- if major == minor -%}
+      {{ throw(message="Mixed case roman numeral: " ~ entries_str) }}
+    {%- endif -%}
+
+    {%- if root_upper == "I" -%}
+      {%- set root_degree = "tonic" -%}
+    {%- elif root_upper == "II" -%}
+      {%- set root_degree = "supertonic" -%}
+    {%- elif root_upper == "III" -%}
+      {%- set root_degree = "mediant" -%}
+    {%- elif root_upper == "IV" -%}
+      {%- set root_degree = "subdominant" -%}
+    {%- elif root_upper == "V" -%}
+      {%- set root_degree = "dominant" -%}
+    {%- elif root_upper == "VI" -%}
+      {%- set root_degree = "submediant" -%}
+    {%- elif root_upper == "VII" -%}
+      {%- set root_degree = "seventh" -%}
+    {%- else -%}
+      {{ throw(message="Unrecognised scale degree: " ~ root) }}
+    {%- endif -%}
+
+    {%- set modifier_words = [
+      "major",
+      "minor",
+      "dominant",
+      "diminished",
+      "half-diminished",
+    ] -%}
+    {%- set_global title = "" -%}
+    {%- if modifiers -%}
+      {%- for modifier in modifiers -%}
+        {%- if modifier_words is containing(modifier) -%}
+          {%- set_global title = title ~ " " ~ modifier -%}
+        {%- elif modifier == "7" -%}
+          {%- set_global title = title ~ " seventh" -%}
+        {%- else -%}
+          {{ throw(message="Unexpected modifier in roman numeral: "
+                           ~ modifier) }}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- else -%}
+      {%- if major -%}
+        {%- set title = title ~ "major" -%}
+      {%- else -%}
+        {%- set title = title ~ "minor" -%}
+      {%- endif -%}
+    {%- endif -%}
+    {%- set title = title ~ " chord" -%}
+    {%- if slash -%}
+      {%- set title = title ~ " to " ~ slash -%}
+      {%- if slash_accidental -%}
+        {%- set title = title ~ " " ~ slash_accidental -%}
+      {%- endif -%}
+    {%- endif -%}
+    {%- set title = title
+                    ~ " rooted in the "
+                    ~ root_degree
+                    ~ " degree of the key" -%}
+
+    <b><abbr title="{{ title | trim }}">
+      {{- root -}}
+      {%- for modifier in modifiers -%}
         {%- if modifier == "major" -%}
-          &#x25b5;
+          &#x2206;
+        {%- elif modifier == "dominant" -%}
+          {%- if minor -%}
+            {{ throw(message="Dominant roman numeral is not uppercase: "
+                             ~ entries_str) }}
+          {%- endif -%}
         {%- elif modifier == "diminished" -%}
-          &#x26ac;
+          &deg;
+          {%- if major -%}
+            {{ throw(message="Diminished roman numeral is not lowercase: "
+                             ~ entries_str) }}
+          {%- endif -%}
         {%- elif modifier == "7" -%}
           7
         {%- elif modifier == "9" -%}
@@ -15,14 +94,17 @@
           11
         {%- elif modifier == "13" -%}
           13
+        {%- else -%}
+          {{ throw(message="Unrecognised modifier in roman numeral: "
+                           ~ modifier) }}
         {%- endif -%}
       {%- endfor -%}
-    </sup></b>
+    </abbr></b>
 
     {%- if not loop.last -%}
       &nbsp;&ndash;&nbsp;
     {%- endif -%}
-  {% endfor %}
+  {%- endfor -%}
 </span>
 
 {#- This comment is necessary to remove unwanted whitespace. -#}

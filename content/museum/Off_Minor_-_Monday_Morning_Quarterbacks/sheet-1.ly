@@ -8,6 +8,9 @@
   <<
     \new ChordNames \with {
       midiInstrument = #"electric guitar (jazz)"
+      chordNameSeparator = \markup { "" }
+      slashChordSeparator = \markup { "⧸" }
+      minorChordModifier = \markup { "−" }
     } {
       \chordmode {
         \override ChordName #"font-family"=#'roman

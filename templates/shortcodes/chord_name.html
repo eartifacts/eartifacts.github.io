@@ -1,44 +1,88 @@
-<span class="chord-name" title="{{ root }} {% if accidental %}{{ accidental }} {% endif %}{{ quality }} chord{% if slash %} on {{ slash }}{% if slash_accidental %} {{ slash_accidental }}{% endif %}{% endif %}">
-  {{ root }}
-  {%- if accidental -%}
-    {%- if accidental == "flat" -%}
-      &#x266d;
-    {%- elif accidental == "sharp" -%}
-      &#x266f;
-    {%- endif -%}
+{%- set title = root -%}
+{%- if accidental -%}
+  {%- if accidental == "flat" -%}
+    {%- set a = "&flat;" -%}
+  {%- elif accidental == "sharp" -%}
+    {%- set a = "&sharp;" -%}
+  {%- else -%}
+    {{ throw(message="Unrecognised accidental: " ~ accidental) }}
   {%- endif -%}
+  {%- set title = title ~ " " ~ a -%}
+{%- endif -%}
+{%- set modifier_words = [
+  "major",
+  "minor",
+  "dominant",
+  "diminished",
+  "half-diminished",
+] -%}
+{%- for modifier in quality | split(pat=" ") -%}
+  {%- if modifier_words is containing(modifier) -%}
+    {%- set_global title = title ~ " " ~ modifier -%}
+  {%- elif modifier == "7" -%}
+    {%- set_global title = title ~ " seventh" -%}
+  {%- elif modifier == "9" -%}
+    {%- set_global title = title ~ " ninth" -%}
+  {%- elif modifier == "11" -%}
+    {%- set_global title = title ~ " eleventh" -%}
+  {%- elif modifier == "13" -%}
+    {%- set_global title = title ~ " thirteenth" -%}
+  {%- else -%}
+    {{ throw(message="Unrecognised modifier in chord name: " ~ modifier) }}
+  {%- endif -%}
+{%- endfor -%}
+{%- set title = title ~ " chord" -%}
+{%- if slash -%}
+  {%- set slash_split = slash | split(pat="") | slice(start=1, end=-1) -%}
+  {%- set slash_name = slash_split | first -%}
+  {%- set slash_a = slash_split | nth(n=1) -%}
+  {%- set slash_accidental = "" -%}
+
+  {%- set title = title ~ " on " ~ slash_name -%}
+  {%- if slash_a -%}
+    {%- if slash_a == "b" -%}
+      {%- set slash_accidental = "&flat;" -%}
+    {%- elif slash_a == "#" -%}
+      {%- set slash_accidental = "&sharp;" -%}
+    {%- elif slash_a == "n" -%}
+      {%- set slash_accidental = "&natural;" -%}
+    {%- else -%}
+      {{ throw(message="Unrecognised accidental abbreviation: " ~ slash_a) }}
+    {%- endif -%}
+
+    {%- set title = title ~ slash_accidental -%}
+  {%- endif -%}
+{%- endif -%}
+
+<abbr class="chord-name" title="{{ title | trim | safe }}">
+  {{- root -}}
+
   {%- for modifier in quality | split(pat=" ") -%}
-    {%- if modifier == "minor" -%}
-      m
+    {%- if modifier == "major" -%}
+      &#x2206;
+    {%- elif modifier == "minor" -%}
+      &minus;
+    {%- elif modifier == "dominant" -%}
+    {%- elif modifier == "diminished" -%}
+      &deg;
+    {%- elif modifier == "half-diminished" -%}
+      &#x1d1a9;
+    {%- elif modifier == "7" -%}
+      7
+    {%- elif modifier == "9" -%}
+      9
+    {%- elif modifier == "11" -%}
+      11
+    {%- elif modifier == "13" -%}
+      13
+    {%- else -%}
+      {{ throw(message="Unrecognised modifier in chord name: " ~ modifier) }}
     {%- endif -%}
   {%- endfor -%}
-  <sup>
-    {%- for modifier in quality | split(pat=" ") -%}
-      {%- if modifier == "major" -%}
-        &#x25b5;
-      {%- elif modifier == "diminished" -%}
-        &#x26ac;
-      {%- elif modifier == "7" -%}
-        7
-      {%- elif modifier == "9" -%}
-        9
-      {%- elif modifier == "11" -%}
-        11
-      {%- elif modifier == "13" -%}
-        13
-      {%- endif -%}
-    {%- endfor -%}
-  </sup>
+
   {%- if slash -%}
-    /{{ slash }}
-    {%- if slash_accidental -%}
-      {%- if slash_accidental == "flat" -%}
-        &#x266d;
-      {%- elif slash_accidental == "sharp" -%}
-        &#x266f;
-      {%- endif -%}
-    {%- endif -%}
+    &#x29F8;{{ slash_name }}{{ slash_accidental | safe }}
   {%- endif -%}
-</span>
+</abbr>
 
 {#- This comment is necessary to remove unwanted whitespace. -#}

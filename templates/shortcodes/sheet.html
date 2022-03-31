@@ -6,6 +6,11 @@
       <img src="sheet-{{ n }}.svg" alt="{{ summary }}" class="sheet-img" />
     </div>
 
+    <audio controls preload="metadata">
+      <source src="sheet-{{ n }}.midi" type="audio/midi" />
+      <source src="sheet-{{ n }}.opus" type="audio/ogg" />
+    </audio>
+
     <figcaption>
       <p class="sheet-source">
         <a href="sheet-{{ n }}.ly">Lilypond source</a> |
