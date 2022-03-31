@@ -130,3 +130,7 @@ address {
     align-items: center;
     justify-content: center;
 }
+
+.serif {
+    font-family: serif;
+}

@@ -10,13 +10,14 @@ artists = ["Off Minor"]
 labels = ["Clean Plate Records", "EarthWaterSky Connection"]
 +++
 
-&ldquo;Monday Morning Quarterbacks&rdquo; is the penultimate track from [Off
-Minor](/artists/off-minor)&rsquo;s (one of two major bands formed in the wake
-of [Saetia](/artists/saetia)&rsquo;s demise, the other being [Hot
-Cross](/artists/hot-cross)) debut full-length. It is effectively the ultimate
-track, as the following track is a brief solo guitar rendition of [Monk&rsquo;s
-&ldquo;Off Minor&rdquo;][off-minor], entirely different from the full-band
-[screamo](/genres/screamo) of the rest of the album.
+&ldquo;Monday Morning Quarterbacks&rdquo; is the penultimate track from {{
+artist(name="Off Minor") }}&rsquo;s (one of two major bands formed in the wake
+of {{ artist(name="Saetia") }}&rsquo;s demise, the other being {{
+artist(name="Hot Cross") }}) debut full-length. It is effectively the ultimate
+track, as the following track is a brief solo guitar rendition of {{
+artist(name="Thelonious Monk") }}&rsquo;s &ldquo;[Off Minor][off-minor]&rdquo;,
+entirely different from the full-band {{ genre(name="screamo") }} of the rest
+of the album.
 
 <!-- more -->
 
@@ -37,7 +38,7 @@ track, as the following track is a brief solo guitar rendition of [Monk&rsquo;s
 
 ## theme
 
-This tune is not **quite** monothematic, strictly speaking, but is nevertheless
+This tune is not _quite_ monothematic, strictly speaking, but is nevertheless
 in a broadly theme-and-variations form. The first two bars set the theme; here
 is a rough transcription of those two bars, with repeat signs showing how it is
 repeated:
@@ -61,15 +62,16 @@ time_sig(n=11, d=4) }} is not terribly long.
 Also of note is the orchestration here. The ensemble itself is typical of rock
 music in general: the classic [power
 trio](https://en.wikipedia.org/wiki/Power_trio). But the way that the power
-trio is used here is unusual (although characteristic of Off Minor as a band).
-The bass is here at the forefront of the arrangement alongside the guitar, and
-the two weave together their own melodies while the drums play a groove that
-both reinforces the rhythms of the bass and guitar (with the more-or-less {{
-time_sig(n=6, d=8) }} feel in the snare and kick drum) and also plays against
-it (with the straight quarter notes in the hi-hats). This particular theme as
-it is played here is vaguely a call-and-response, with the bass going into its
-very high register (hence the use of <i>8<sup>va</sup></i> in the
-transcription) to respond to the chord-melody of the guitar.
+trio is used here is unusual (although characteristic of
+{{ artist(name="Off Minor") }} as a band). The bass is here at the forefront of
+the arrangement alongside the guitar, and the two weave together their own
+melodies while the drums play a groove that both reinforces the rhythms of the
+bass and guitar (with the more-or-less {{ time_sig(n=6, d=8) }} feel in the
+snare and kick drum) and also plays against it (with the straight quarter notes
+in the hi-hats). This particular theme as it is played here is vaguely a
+call-and-response, with the bass going into its very high register (hence the
+use of <i class="serif">8<sup>va</sup></i> in the transcription) to respond to
+the chord-melody of the guitar.
 
 From here we will take a look at a traditional decomposition of this theme into
 &ldquo;harmony&rdquo; and &ldquo;melody&rdquo;.
