@@ -10,16 +10,16 @@
     }
 }
 
-header {
+.top-part-banner {
     margin: 0 4rem 1rem 0;
 }
 @media (max-width: 24rem) {
-    header {
+    .top-part-banner {
         margin: 0 1rem 1rem 0;
     }
 }
 
-header > p {
+.top-part-banner > p {
     font-weight: lighter;
 }
 
@@ -188,10 +188,19 @@ main {
     margin-left: 0.25em;
     margin-right: 0.25em;
     margin-bottom: -0.2em;
+    margin-top: 0;
     vertical-align: -0.2em;
     line-height: 0.4em;
     font-size: 85%;
     text-align: center;
+}
+
+.time-sig>* {
+    font-size: 85%;
+}
+
+.time-sig>sup {
+    top: -0.35em;
 }
 
 .roman,

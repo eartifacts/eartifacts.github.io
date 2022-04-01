@@ -4,11 +4,11 @@ body {
     justify-content: center;
 }
 
-header {
+.top-part-banner {
     margin-bottom: 1rem;
 }
 
-header > p {
+.top-part-banner > p {
     font-weight: lighter;
 }
 
