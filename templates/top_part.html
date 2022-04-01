@@ -1,6 +1,22 @@
+{% if not top_part_no_skip %}
+  <a href="#main-content" class="skip-a screen-reader">Skip to the content</a>
+{% endif %}
+
 <header id="top-part">
   <div class="top-part-banner">
-    <span class="top-part-heading"><a class="naked-anchor" href="/">eartifacts</a></span>
+    <
+    {%- if top_part_h1 -%}
+      h1
+    {%- else -%}
+      span
+    {% endif %}
+    class="top-part-heading"><a class="naked-anchor" href="/">eartifacts</a></
+    {%- if top_part_h1 -%}
+      h1
+    {%- else -%}
+      span
+    {%- endif -%}
+    >
     <p>a small, informal museum of musical artifacts</p>
   </div>
 
