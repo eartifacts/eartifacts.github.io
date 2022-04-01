@@ -167,6 +167,13 @@ sup {
     top: -0.5em;
 }
 
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted;
+    cursor: help;
+}
+
 .centering {
     width: 100%;
     display: flex;

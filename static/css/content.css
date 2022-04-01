@@ -208,9 +208,9 @@ main {
     font-family: serif;
 }
 
-.time-sig,
-.roman abbr,
-.chord-name {
+.time-sig.time-sig,
+.roman.roman abbr,
+.chord-name.chord-name {
     text-decoration: none;
     cursor: help;
 }
