@@ -28,6 +28,7 @@
         <th scope="row">title</th>
         <td {% if instrumentation %}colspan="2"{% endif %}>{{ title }}</td>
       </tr>
+
       {% if album %}
         <tr>
           <th scope="row">album</th>
@@ -36,48 +37,81 @@
           </i></td>
         </tr>
       {% endif %}
+
       {% if year %}
         <tr>
           <th scope="row">year</th>
           <td {% if instrumentation %}colspan="2"{% endif %}>
-            <a href="/years/{{ year }}">{{ year }}</a>
+            <a href="/years/{{ year }}"><time datetime="{{ year }}">
+              {{- year -}}
+            </time></a>
           </td>
         </tr>
       {% endif %}
+
       {% if duration %}
+        {% set duration_split = duration | split(pat=":") %}
+        {% set duration_split_len = duration_split | length %}
+        {% if duration_split_len == 2 %}
+          {% set dt = "PT" ~ duration_split.0 ~ "M" ~ duration_split.1 ~ "S" %}
+        {% elif duration_split_len == 3 %}
+          {% set dt = "PT" ~ duration_split.0 ~ "H" ~ duration_split.1 ~ "M"
+                      ~ duration_split.2 ~ "S" %}
+        {% else %}
+          throw(message="duration is not in MM:SS nor HH:MM:SS format: "
+                        ~ duration)
+        {% endif %}
         <tr>
           <th scope="row">duration</th>
-          <td {% if instrumentation %}colspan="2"{% endif %}>
+          <td {% if instrumentation %}colspan="2"{% endif %}><time
+            datetime="{{ dt }}" title="{{ dt }}">
             {{- duration -}}
-          </td>
+          </time></td>
         </tr>
       {% endif %}
+
       {% if genres %}
         <tr>
           <th scope="row">genres</th>
-          <td {% if instrumentation %}colspan="2"{% endif %}>
+          <td {% if instrumentation %}colspan="2"{% endif %}><ul
+            class="inline">
             {%- for genre in genres -%}
-              <a href="/genres/{{ genre | slugify }}">{{ genre }}</a>
-              {%- if not loop.last %}, {% endif -%}
+              <li><a href="/genres/{{ genre | slugify }}">{{ genre }}</a></li>
             {%- endfor -%}
-          </td>
+          </ul></td>
         </tr>
       {% endif %}
+
       {% if labels %}
         <tr>
           <th scope="row">label(s)</th>
-          <td {% if instrumentation %}colspan="2"{% endif %}>
-            {{ labels | join(sep=", ") }}
-          </td>
+          <td {% if instrumentation %}colspan="2"{% endif %}><ul
+            class="inline">
+            {%- for label in labels -%}
+              <li>{{ label }}</li>
+            {%- endfor -%}
+          </ul></td>
         </tr>
       {% endif %}
+
       {% if instrumentation %}
         <tr>
           <th rowspan="{{ instrumentation | length }}">instrumentation</th>
           {%- for instrument in instrumentation -%}
             {%- set inst_split = instrument | split(pat=": ") -%}
             <th scope="row">{{ inst_split.0 }}</th>
-            <td>{{ inst_split.1 }}</td>
+            <td>
+              {%- if inst_split.1 is containing(", ") -%}
+                <ul class="inline">
+                  {%- set performers = inst_split.1 | split(pat=", ") -%}
+                  {%- for performer in performers -%}
+                    <li>{{ performer }}</li>
+                  {%- endfor -%}
+                </ul>
+              {%- else -%}
+                {{- inst_split.1 -}}
+              {%- endif -%}
+            </td>
             </tr>
             <tr>
           {% endfor %}

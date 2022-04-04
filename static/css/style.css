@@ -206,3 +206,27 @@ abbr[title] {
     z-index: 999999999;
     text-decoration: underline;
 }
+
+.inline {
+    display: inline;
+}
+
+ul.inline {
+    list-style: none;
+}
+
+.inline > li {
+    display: inline;
+}
+
+ul.inline > li::after {
+    content: ', ';
+}
+
+ul.inline.inline-semi > li::after {
+    content: '; ';
+}
+
+ul.inline > li:last-child::after {
+    content: '';
+}

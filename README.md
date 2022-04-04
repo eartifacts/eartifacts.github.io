@@ -30,6 +30,9 @@ The script assumes that you have all of the following in your `$PATH`:
 - [sed](https://en.wikipedia.org/wiki/Sed)
 - [lilypond](http://lilypond.org/)
 - [inkscape](https://inkscape.org/)
+- [npm](https://www.npmjs.com/)
+- [timidity](https://en.wikipedia.org/wiki/TiMidity%2B%2B)
+- [opusenc](https://opus-codec.org/docs/opus-tools/opusenc.html)
 
 ## legal
 

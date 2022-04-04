@@ -195,11 +195,11 @@ main {
     text-align: center;
 }
 
-.time-sig>* {
+.time-sig > * {
     font-size: 85%;
 }
 
-.time-sig>sup {
+.time-sig > sup {
     top: -0.35em;
 }
 
