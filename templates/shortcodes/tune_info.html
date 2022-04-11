@@ -1,7 +1,12 @@
 {% if cover_ext %}
   <figure class="cover-art">
-    <img src="cover_art.{{ cover_ext }}"
-         alt="Cover art for &ldquo;{% if album %}{{ album }}{% else %}{{ title }}{% endif %}&rdquo;" />
+    <img src="cover_art.{{ cover_ext }}" alt="Cover art for &ldquo;
+      {%- if album -%}
+        {{- album -}}
+      {%- else -%}
+        {{- title -}}
+      {%- endif -%}
+      &rdquo;" />
 
     <figcaption>
       Cover art for <i>
@@ -21,6 +26,7 @@
       <tr>
         <th scope="row">artist</th>
         <td {% if instrumentation %}colspan="2"{% endif %}>
+          {% set artist = page.taxonomies.artists.0 %}
           <b><a href="/artists/{{ artist | slugify }}">{{ artist }}</a></b>
         </td>
       </tr>
@@ -38,7 +44,8 @@
         </tr>
       {% endif %}
 
-      {% if year %}
+      {% if page.taxonomies.years %}
+        {% set year = page.taxonomies.years.0 %}
         <tr>
           <th scope="row">year</th>
           <td {% if instrumentation %}colspan="2"{% endif %}>
@@ -70,7 +77,8 @@
         </tr>
       {% endif %}
 
-      {% if genres %}
+      {% if page.taxonomies.genres %}
+        {% set genres = page.taxonomies.genres %}
         <tr>
           <th scope="row">genres</th>
           <td {% if instrumentation %}colspan="2"{% endif %}><ul
@@ -82,13 +90,27 @@
         </tr>
       {% endif %}
 
-      {% if labels %}
+      {% if page.taxonomies.minor_genres %}
+        {% set minor_genres = page.taxonomies.minor_genres %}
+        <tr>
+          <th scope="row">minor genres</th>
+          <td {% if instrumentation %}colspan="2"{% endif %}><ul
+            class="inline">
+            {%- for genre in minor_genres -%}
+              <li><a href="/genres/{{ genre | slugify }}">{{ genre }}</a></li>
+            {%- endfor -%}
+          </ul></td>
+        </tr>
+      {% endif %}
+
+      {% if page.taxonomies.labels %}
+        {% set labels = page.taxonomies.labels %}
         <tr>
           <th scope="row">label(s)</th>
           <td {% if instrumentation %}colspan="2"{% endif %}><ul
             class="inline">
             {%- for label in labels -%}
-              <li>{{ label }}</li>
+              <li><a href="/labels/{{ label | slugify }}">{{ label }}</a></li>
             {%- endfor -%}
           </ul></td>
         </tr>
@@ -99,17 +121,23 @@
           <th rowspan="{{ instrumentation | length }}">instrumentation</th>
           {%- for instrument in instrumentation -%}
             {%- set inst_split = instrument | split(pat=": ") -%}
-            <th scope="row">{{ inst_split.0 }}</th>
+            <th scope="row">
+              <a href="/instruments/{{ inst_split.0 | slugify }}">
+                {{- inst_split.0 -}}
+              </a>
+            </th>
             <td>
-              {%- if inst_split.1 is containing(", ") -%}
-                <ul class="inline">
-                  {%- set performers = inst_split.1 | split(pat=", ") -%}
-                  {%- for performer in performers -%}
-                    <li>{{ performer }}</li>
-                  {%- endfor -%}
-                </ul>
-              {%- else -%}
-                {{- inst_split.1 -}}
+              {%- if inst_split.1 -%}
+                {%- if inst_split.1 is containing(", ") -%}
+                  <ul class="inline">
+                    {%- set performers = inst_split.1 | split(pat=", ") -%}
+                    {%- for performer in performers -%}
+                      <li>{{ performer }}</li>
+                    {%- endfor -%}
+                  </ul>
+                {%- else -%}
+                  {{- inst_split.1 -}}
+                {%- endif -%}
               {%- endif -%}
             </td>
             </tr>

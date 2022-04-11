@@ -28,8 +28,9 @@ compile_sass = false
 #         { name = "authors" }, # Basic definition: no feed nor pagination.
 #     ]
 taxonomies = [
-    { name = "tags" },
     { name = "genres" },
+    { name = "minor_genres" },
+    { name = "instruments" },
     { name = "years" },
     { name = "artists" },
     { name = "labels" },

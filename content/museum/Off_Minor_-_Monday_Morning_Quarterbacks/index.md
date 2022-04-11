@@ -2,9 +2,14 @@
 title = "Off Minor — “Monday Morning Quarterbacks”"
 
 [taxonomies]
-tags = ["vocals", "unclean vocals", "guitar", "electric guitar", "bass guitar",
-        "electric bass guitar", "drumkit", "odd time signatures", "power trio"]
-genres = ["screamo", "jazz punk", "math rock", "post-hardcore"]
+genres = ["screamo", "math rock", "jazz punk"]
+minor_genres = []
+instruments = [
+    "unclean vocals",
+    "electric guitar",
+    "electric bass guitar",
+    "drumkit",
+]
 years = ["2002"]
 artists = ["Off Minor"]
 labels = ["Clean Plate Records", "EarthWaterSky Connection"]
@@ -22,13 +27,9 @@ of the album.
 <!-- more -->
 
 {{ tune_info(cover_ext="jpg",
-             artist="Off Minor",
              title="Monday Morning Quarterbacks",
              album="The Heat Death of the Universe",
-             year=2002,
              duration="2:56",
-             genres=["screamo", "jazz punk", "math rock", "post-hardcore"],
-             labels=["Clean Plate Records", "EarthWaterSky Connection"],
              instrumentation=[
                  "unclean vocals: Jamie Behar, Steven Roche",
                  "electric guitar: Jamie Behar",
@@ -54,7 +55,7 @@ a hypermeter here that should &ldquo;actually&rdquo; be {{
 time_sig(n="3+3+3+2", d=4) }}. Regardless, there is a clear 3-against-2 feel
 due to the dotted quarter notes overlapping the quarter note pulse for the
 first 9 pulses of each measure, i\.e. a {{ time_sig(n="3+3+3+3+3+3+4", d=8) }}
-feel. The pace is fairly swift, at circa 185 pulses per minute, so a bar of {{
+feel. The pace is fairly swift, at circa 185 beats per minute, so a bar of {{
 time_sig(n=11, d=4) }} is not terribly long.
 
 ### orchestration

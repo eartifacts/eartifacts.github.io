@@ -2,7 +2,6 @@
 title = "introduction to eartifacts"
 
 [taxonomies]
-tags = ["introduction"]
 +++
 
 eartifacts is a small, informal museum of musical artifacts; in particular, the

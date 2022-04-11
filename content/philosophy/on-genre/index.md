@@ -2,7 +2,6 @@
 title = "on genre"
 
 [taxonomies]
-tags = ["genre"]
 +++
 
 In eartifacts articles, the concept of [musical
