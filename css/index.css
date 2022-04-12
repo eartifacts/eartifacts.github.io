@@ -1,0 +1,42 @@
+:root {
+    --accent: #5fbcd3;
+}
+
+body {
+    display: flex;
+    align-items: flex-start;
+}
+
+#top-part {
+    margin: auto;
+    padding: 0.5rem;
+}
+
+.top-part-banner {
+    margin-bottom: 1rem;
+}
+
+.top-part-banner > p {
+    font-weight: lighter;
+}
+
+nav > ul {
+    list-style-type: none;
+}
+
+nav li:hover {
+    list-style-type: square;
+    color: var(--accent);
+}
+
+nav a {
+    display: block;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.banner-img {
+    margin: 0;
+}
