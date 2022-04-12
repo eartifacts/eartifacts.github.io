@@ -1,3 +1,7 @@
+:root {
+    --accent: #5fbcd3;
+}
+
 #top-part {
     display: flex;
     align-items: center;
@@ -7,6 +11,10 @@
 @media (max-width: 24rem) {
     #top-part {
         flex-direction: column;
+        align-items: start;
+    }
+    #top-part > * {
+        margin: auto;
     }
 }
 
@@ -15,7 +23,8 @@
 }
 @media (max-width: 24rem) {
     .top-part-banner {
-        margin: 0 1rem 1rem 0;
+        padding-bottom: 1rem;
+        text-align: center;
     }
 }
 
@@ -31,7 +40,7 @@ nav > ul,
 nav li:hover,
 #terms-list li:hover {
     list-style-type: square;
-    color: #e8e;
+    color: var(--accent);
 }
 
 nav a,
@@ -56,9 +65,11 @@ main {
 
 #content-wrapper {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
     width: 100%;
+}
+#content-wrapper > * {
+    margin: auto;
 }
 
 #content {

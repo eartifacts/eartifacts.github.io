@@ -1,7 +1,15 @@
+:root {
+    --accent: #5fbcd3;
+}
+
 body {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+}
+
+#top-part {
+    margin: auto;
+    padding: 0.5rem;
 }
 
 .top-part-banner {
@@ -18,7 +26,7 @@ nav > ul {
 
 nav li:hover {
     list-style-type: square;
-    color: #e8e;
+    color: var(--accent);
 }
 
 nav a {
@@ -27,4 +35,8 @@ nav a {
 
 .full-height {
     height: 100%;
+}
+
+.banner-img {
+    margin: 0;
 }

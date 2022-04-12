@@ -19,9 +19,6 @@ same license, at the licensee&rsquo;s option). For access to the source, see
 [![GNU AGPL v3+](https://www.gnu.org/graphics/agplv3-with-text-162x68.png
 "GNU AGPL v3+")](https://www.gnu.org/licenses/agpl-3.0.html)
 
-[eartifacts logo](/img/eartifacts.svg): Ear by Maxim David from the Noun
-Project ([CC BY 3\.0](https://creativecommons.org/licenses/by/3.0/)).
-
 ## source {#source}
 
 The source for eartifacts is hosted on GitHub:

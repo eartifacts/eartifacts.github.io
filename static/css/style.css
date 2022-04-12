@@ -1,3 +1,12 @@
+:root {
+    --accent: #5fbcd3;
+}
+
+::selection {
+    background-color: #1b5664;
+    color: #fff;
+}
+
 html {
     -webkit-text-size-adjust: 100%;
 }
@@ -85,7 +94,7 @@ a {
     text-decoration: underline #eee8 dotted;
 }
 a:hover {
-    color: #e8e;
+    color: var(--accent);
     text-decoration: none;
 }
 
@@ -229,4 +238,15 @@ ul.inline.inline-semi > li::after {
 
 ul.inline > li:last-child::after {
     content: '';
+}
+
+.banner-img {
+    height: 4rem;
+    margin: 0 1rem 1rem 0;
+}
+@media (max-width: 24rem) {
+    .banner-img {
+        margin: 0.5rem;
+        text-align: center;
+    }
 }

@@ -7,3 +7,6 @@ public/
 *.swp
 *.bak
 .idea/
+
+# Score stuff
+.mscbackup/
